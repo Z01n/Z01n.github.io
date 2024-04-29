@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grouped Data Calculator ni Zoin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        input[type="number"], input[type="text"] {
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Grouped Data Calculator ni Zoinඞ</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Class Interval Start</th>
+                <th>Class Interval End</th>
+                <th>Frequency</th>
+                <th>Lower Boundary</th>
+                <th>Cumulative Frequency</th>
+            </tr>
+        </thead>
+        <tbody id="data-table">
+            <!-- Initial row is populated in JavaScript -->
+        </tbody>
+    </table>
+    <button onclick="addRow()">Add Row</button>
+    <button onclick="updateTable()">Calculate Table</button>
+    <div>
+        <label>Type (Q for Quartile, D for Decile, P for Percentile): <input type="text" id="typeInput"></label>
+        <label>Value (e.g., 1 for Q1, 10 for D10, 50 for P50): <input type="number" id="valueInput"></label>
+        <button onclick="calculateQDP()">Calculate</button>
+    </div>
+    <div id="result"></div>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
